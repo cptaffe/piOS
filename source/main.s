@@ -17,7 +17,7 @@ pinNum .req r0
 pinFunc .req r1
 mov pinNum,#16
 mov pinFunc,#1
-bl gpio_Init
+bl io_gpio_Init
 .unreq pinNum
 .unreq pinFunc
 
@@ -27,7 +27,7 @@ pinNum .req r0
 pinVal .req r1
 mov pinNum,#16
 mov pinVal,#0 /* pin off, led on */
-bl gpio_Set
+bl io_gpio_Set
 .unreq pinNum
 .unreq pinVal
 
@@ -43,7 +43,7 @@ pinNum .req r0
 pinVal .req r1
 mov pinNum,#16
 mov pinVal,#1	/* pin on, led off */
-bl gpio_Set
+bl io_gpio_Set
 .unreq pinNum
 .unreq pinVal
 
