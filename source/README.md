@@ -11,7 +11,7 @@ The library uses the idea of packages (pkg) to determine directory structure and
 
 The source is organized by folder into __pkg/sub/pkg_sub.s__ (or .c), ex: __io/gpio/io_gpio.s__
 
-Since the _____ character is used as a separator, identifiers such as pkgs, or funcs must refrain from using them. Instead, pkgs should use short, easy to remember package names.
+Since the '_' character is used as a separator, identifiers such as pkgs, or funcs must refrain from using them. Instead, pkgs should use short, easy to remember package names.
 
 To keep pkg names short, pkgs should only be nested a maximum of 2-3 levels, ex: _io/gpio_ is nested 2 levels.
 
