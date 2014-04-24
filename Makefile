@@ -15,8 +15,6 @@ BUILD := build/
 # The directory in which source files are stored.
 SOURCE := source/
 
-SUBDIRS := /io
-
 # The name of the output file to generate.
 TARGET = kernel.img
 
@@ -57,7 +55,6 @@ $(BUILD)%.o: $(SOURCE)%.s $(BUILD)
 
 $(BUILD):
 	-mkdir $@
-	-mkdir $@/$(SUBDIRS)
 
 # Rule to clean files.
 clean : 
