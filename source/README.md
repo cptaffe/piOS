@@ -23,4 +23,3 @@ The remaining registers must remain unchanged and if used, its value will be pus
 
 #### name mangling
 Function names are named __pkg_subpkg_Func__, ex: __io/gpio/io_gpio.s__ will contain functions prefixed with __io_gpio___.
-In exported functions (`.globl`), the __Func__ portion is capitalized, while in unexported functions it is not.
