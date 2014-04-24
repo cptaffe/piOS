@@ -6,7 +6,8 @@ This directory is used for storing source code.
 ## packages
 
 ### organization
-The source is organized by folder into __package/subpackage.s__ (or .c)
+
+The source is organized by folder into __package/subpackage.s__ (or .c), ex: __io/gpio.s__
 
 ### functions
 
