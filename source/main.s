@@ -31,11 +31,13 @@ bl gpio_Set
 .unreq pinNum
 .unreq pinVal
 
-mov r2,#0x3F0000
+decr .req r0
+mov decr,#0x3F0000
 wait0$:
-sub r2,#1
-cmp r2,#0
-bne wait0$
+	sub decr,#1
+	cmp decr,#0
+	bne wait0$
+.unreq decr
 
 pinNum .req r0
 pinVal .req r1
@@ -45,10 +47,12 @@ bl gpio_Set
 .unreq pinNum
 .unreq pinVal
 
-mov r2,#0x3F0000
+decr .req r0
+mov decr,#0x3F0000
 wait1$:
-sub r2,#1
-cmp r2,#0
-bne wait1$
+	sub decr,#1
+	cmp decr,#0
+	bne wait1$
+.unreq decr
 
 b loop$
