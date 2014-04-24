@@ -3,27 +3,27 @@
 */
 
 /*
-	function gpio.Address()
+	function io.gpio.Address()
 	returns address of GPIO
 */
-.globl gpio_Address
-gpio_Address:
+.globl io_gpio_Address
+io_gpio_Address:
 	ldr r0,=0x20200000
 	mov pc,lr
 
 /*
-	function gpio.Set()
+	function io.gpio.Init()
 	initiates gpio for input
 */
-.globl gpio_Init
-gpio_Init:
+.globl io_gpio_Init
+io_gpio_Init:
 	/* if r0 < 53 & > 7 */
 	cmp r0,#53
 		cmpls r0,#7
 			movhi pc,lr
 	push {lr}
 	mov r2,r0
-	bl gpio_Address
+	bl io_gpio_Address
 	
 	functionLoop$:
 		/* if r2 > 9 */
@@ -40,11 +40,11 @@ gpio_Init:
 
 
 /*
-	function gpio.Set
+	function io.gpio.Set()
 	returns 
 */
-.globl gpio_Set
-gpio_Set:
+.globl io_gpio_Set
+io_gpio_Set:
 	pinNum .req r0
 	pinVal .req r1
 	
@@ -54,7 +54,7 @@ gpio_Set:
 	mov r2,pinNum
 	.unreq pinNum
 	pinNum .req r2
-	bl gpio_Address
+	bl io_gpio_Address
 	gpioAddr .req r0
 
 	pinBank .req r3
